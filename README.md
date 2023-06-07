@@ -1,64 +1,77 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## About Apps
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Api Service Kendaraan
+- Stock Kendaraan
+- Penjualan Kendaraan
+- Laporan penjualan Per kendaraan
 
-## About Laravel
+## Environment
+- Laravel 8
+- Mongodb 4.4
+- Php 8
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Installation
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Clone Project
+- Run Npm Install
+- Set Up Env
+- Config database
+    * 'default' => env('DB_CONNECTION', 'mongodb'),
+    * 'mongodb' => [ 'driver' => 'mongodb', 'host' => env('DB_HOST', '127.0.0.1'), 'port' => env('DB_PORT', 27017), 'database' => env('DB_DATABASE'), 'username' => env('DB_USERNAME'), 'password' => env('DB_PASSWORD'), 'options' => [], ],
+- run composer require jenssegers/mongodb
+- install breeze
+- npm install && npm run dev
+- php artisan migrate
+- php artisan serve
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+## Login First
+- To get token we have to login first
+- Registration
+    * http://localhost:8000/api/register
+- Login
+    * http://localhost:8000/api/login
+    * <img width="1414" alt="Screenshot 2023-06-07 at 23 11 09" src="https://github.com/ganefiatri/api_vehicle/assets/29312607/c8ebef84-c029-47de-b8b6-25842181b14b">
+- Get token and paste here
+    * in Headers write Authorization and value Bearer (Here paste your token)
+    * <img width="1414" alt="Screenshot 2023-06-07 at 23 14 05" src="https://github.com/ganefiatri/api_vehicle/assets/29312607/064ee056-f34f-4b76-83b5-15130643b61b">
+    
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Input Data
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- How to test?
+    * using Postman app third party to test API 
+    * Choose Method POST
 
-## Laravel Sponsors
+- Input Vehicle
+    * http://localhost:8000/api/vehicle/
+    * - MotorBike
+    * <img width="1414" alt="Screenshot 2023-06-07 at 22 47 53" src="https://github.com/ganefiatri/api_vehicle/assets/29312607/b950121c-8354-4e8f-ade5-93534442541b">
+    * - Car
+    * <img width="1414" alt="Screenshot 2023-06-07 at 23 02 41" src="https://github.com/ganefiatri/api_vehicle/assets/29312607/b5e17062-6fce-46ce-9d6c-e956e4321dba">
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-### Premium Partners
+- Input Sale
+    * http://localhost:8000/api/sale
+    * - MotorBike
+    * <img width="1414" alt="Screenshot 2023-06-07 at 22 54 31" src="https://github.com/ganefiatri/api_vehicle/assets/29312607/d3a22310-ef29-44ca-91a4-11fefbe1486e">
+    * - Car
+    * <img width="1414" alt="Screenshot 2023-06-07 at 23 04 16" src="https://github.com/ganefiatri/api_vehicle/assets/29312607/b2ff7c7c-5570-4869-8531-538ad41909fe">
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Get Api
 
-## Code of Conduct
+- Get Stock
+    * http://localhost:8000/api/stock
+    * <img width="1414" alt="Screenshot 2023-06-07 at 23 14 05" src="https://github.com/ganefiatri/api_vehicle/assets/29312607/9b956fc7-499d-4b5b-a330-75a53f98f499">
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- Get Sale
+    * http://localhost:8000/api/report
+    * <img width="1414" alt="Screenshot 2023-06-07 at 23 21 55" src="https://github.com/ganefiatri/api_vehicle/assets/29312607/3736f041-caa7-4864-a0ba-6bdcdfa61b11">
 
-## Security Vulnerabilities
+- Get Report Sale Per Item
+    * http://localhost:8000/api/report/(id)
+    * <img width="1414" alt="Screenshot 2023-06-07 at 23 24 24" src="https://github.com/ganefiatri/api_vehicle/assets/29312607/cea6c945-9371-4c89-8f88-ea3ebb9ecc53">
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
