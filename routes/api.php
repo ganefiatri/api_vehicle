@@ -3,6 +3,7 @@
 use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\API\CarController;
 use App\Http\Controllers\API\MotorController;
+use App\Http\Controllers\API\SaleController;
 use App\Http\Controllers\API\VehicleController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -27,5 +28,9 @@ Route::group(['middleware'=>'auth:sanctum'], function () {
     Route::resource('vehicle', VehicleController::class);
     Route::resource('car', CarController::class);
     Route::resource('motor', MotorController::class);
+    Route::resource('sale', SaleController::class);
     Route::post('/vehicle/{id}',[VehicleController::class, 'update']);
+    Route::get('/stock', [SaleController::class, 'stock']);
+    Route::get('/report', [SaleController::class, 'reportSale']);
+    Route::get('/report/{id}', [SaleController::class, 'reportSalePerId']);
 });

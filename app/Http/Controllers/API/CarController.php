@@ -17,7 +17,7 @@ class CarController extends Controller
     {
         $data = Car::with('vehicle')->get();
         return response()->json($data);
-    }
+    }   
 
     /**
      * Show the form for creating a new resource.

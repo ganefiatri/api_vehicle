@@ -20,4 +20,9 @@ class Car extends Eloquent
     {
         return $this->belongsTo(Vehicle::class, 'vehicle_id');
     }
+
+    public function sale()
+    {
+        return $this->hasMany(Sale::class);
+    }
 }

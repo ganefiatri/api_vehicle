@@ -60,8 +60,8 @@ class VehicleController extends Controller
                     Motor::create([
                         'vehicle_id' => $response->id,
                         'engine' => $request->engine,
-                        'suspension' => $request->seats,
-                        'transmition' => $request->type,
+                        'suspension' => $request->suspension,
+                        'transmition' => $request->transmition,
                     ]);
                 }
                 return response()->json([
